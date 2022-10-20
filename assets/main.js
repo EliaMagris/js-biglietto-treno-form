@@ -13,12 +13,6 @@ function TotalPrice(){
 
     let ticketPrice = valueAtKM * costAtKM;
 
-    // random number
-
-
-
-    // discount under 18
-
     let underDiscount = (ticketPrice / 100) * 20;
     let ticketForChild = ticketPrice - underDiscount
 
@@ -39,7 +33,7 @@ function TotalPrice(){
     }
     
     
-   document.getElementById("result").innerHTML = "Total cost is:" + "" + ticketPrice + "" + "€"
+   document.getElementById("result").innerHTML = ticketPrice + "" + "€"
 
    // nome passeggero
 
@@ -49,4 +43,9 @@ function TotalPrice(){
 
    document.getElementById("randomNumberBig").innerHTML = Math.floor(Math.random() * 100000) + 1;
 
+   document.getElementById('hoverItems').style.display = "block";
+}
+
+function clearResult(){
+    document.getElementById("hoverItems").value = ''
 }
