@@ -5,18 +5,17 @@ function TotalPrice(){
 
     const costAtKM = 0.21;
 
-    let valueName = document.getElementById ("inputName"). value;
+    let valueName = document.getElementById ("inputName").value;
 
-    let valueAtKM = document.getElementsByValue ("inputKM"). value;
+    let valueAtKM = document.getElementById ("inputKM").value;
 
-    let maggiorenne = document.getElementById ("inputAgeYoung"). value;
-    
-    let Minorenne = document.getElementById ("inputAgeAdult"). value;
+    let scelta = document.getElementById("select").value;
 
-    let Anziano = document.getElementById ("inputAgeOld"). value;
-
-    
     let ticketPrice = valueAtKM * costAtKM;
+
+    // random number
+
+
 
     // discount under 18
 
@@ -29,16 +28,25 @@ function TotalPrice(){
     let ticketForOld = ticketPrice - upperDiscount
 
   
-
-    if (Minorenne){
+    if ( scelta == 2 ){
         ticketPrice = ticketForChild.toFixed(2);
     }
-    else if (Anziano){
-        ticketPrice = ticketForOld.toFixed(2);
-    } 
-    else{
+    else if (scelta == 1){
         ticketPrice = ticketPrice.toFixed(2)
+    } 
+    else {
+        ticketPrice = ticketForOld.toFixed(2);
     }
     
-   document.getElementById ("result").innerHTML = "Total cost is:" + "" + ticketPrice + "" + "€"
+    
+   document.getElementById("result").innerHTML = "Total cost is:" + "" + ticketPrice + "" + "€"
+
+   // nome passeggero
+
+   document.getElementById("nomePasseggero").innerHTML = valueName
+
+   document.getElementById("randomNumber").innerHTML = Math.floor(Math.random() * 10) + 1;
+
+   document.getElementById("randomNumberBig").innerHTML = Math.floor(Math.random() * 100000) + 1;
+
 }
